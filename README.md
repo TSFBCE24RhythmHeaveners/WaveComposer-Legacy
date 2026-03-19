@@ -2,6 +2,7 @@
 A professional-grade browser-based DAW (Digital Audio Workstation) with multi-track recording, MIDI piano roll, step sequencer, mixer, effects, and real-time audio processing.
 
 Language: HTML
+
 Dependencies: Web Audio API, Canvas API, Vanilla JavaScript, CSS Grid/Flexbox, LocalStorage API, Web MIDI API, MediaRecorder API
 
 ## Features
