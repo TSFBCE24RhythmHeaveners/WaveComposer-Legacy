@@ -440,6 +440,7 @@ input.mi:focus{border-color:var(--acc4)}
     <button class="tool" id="t-pencil" onclick="setTool('pencil')" title="Draw (C)"">✏</button>
     <button class="tool" id="t-scissors" onclick="setTool('scissors')" title="Split">✂</button>
     <button class="tool" id="t-mute" onclick="setTool('mute')" title="Mute">🔇</button>
+  </div><div style="display:flex;gap:3px">
     <button class="tool" id="btnCycle" onclick="toggleCycle()" title="Cycle/Loop (C)">⟳</button>
     <button class="tool" id="btnPR" onclick="togglePR()" title="Piano Roll (E)">🎹</button>
     <button class="tool" id="btnKB" onclick="toggleKB()" title="Keyboard (K)">🎵</button>
@@ -450,17 +451,18 @@ input.mi:focus{border-color:var(--acc4)}
     <button class="tool" id="btnInput" onclick="toggleInputPanel()" title="Microphone">🎙</button>
     <button class="tool" id="btnMet" onclick="toggleMet()" title="Metronome">🔔</button>
     <button class="tool" id="btnCount" onclick="toggleCount()"title="1-2-3 Count">🔢</button>
-    <input id="projName" value="Untitled" style="background:var(--bg-dark);border:1px solid var(--border);color:var(--txt);border-radius:4px;padding:3px 7px;font-size:11px;width:110px" title="Project name">
-    <button class="tool" onclick="saveProject()" title="Save">💾</button>
-    <button class="tool" onclick="loadProject()" title="Load">📂</button>
-    <button class="tool" onclick="toggleProjPanel()" title="Projects & Storage">⋯</button>
-    <button class="tool" onclick="exportAudio()" title="Export WAV">⬇️</button>
-    <button class="tool" onclick="exportMIDI()" title="Export MIDI file">🎹</button>
-    <button class="tool" onclick="shareURL()" title="Share project as URL">🔗</button>
-    <button class="tool" id="btnScope" onclick="toggleScope()" title="Master oscilloscope">〰</button>
-    <button class="tool" id="btnWake" onclick="toggleWakeLock()" title="Keep screen awake">☀</button>
-    <button class="tool" id="btnTabCap" onclick="toggleTabCapture()" title="Capture audio from any browser tab">🌐</button>
-    <div style="flex:1"></div>
+  </div><div style="display:flex;gap:3px">
+  <input id="projName" value="Untitled" style="background:var(--bg-dark);border:1px solid var(--border);color:var(--txt);border-radius:4px;padding:3px 7px;font-size:11px;width:110px" title="Project name">
+  <button class="tool" onclick="saveProject()" title="Save">💾</button>
+  <button class="tool" onclick="loadProject()" title="Load">📂</button>
+  <button class="tool" onclick="toggleProjPanel()" title="Projects & Storage">⋯</button>
+  <button class="tool" onclick="exportAudio()" title="Export WAV">⬇️</button>
+  <button class="tool" onclick="exportMIDI()" title="Export MIDI file">🎹</button>
+  <button class="tool" onclick="shareURL()" title="Share project as URL">🔗</button>
+  <button class="tool" id="btnScope" onclick="toggleScope()" title="Master oscilloscope">〰</button>
+  <button class="tool" id="btnWake" onclick="toggleWakeLock()" title="Keep screen awake">☀</button>
+  <button class="tool" id="btnTabCap" onclick="toggleTabCapture()" title="Capture audio from any browser tab">🌐</button>
+  <div style="flex:1"></div>
 
   <!-- Zoom -->
   <div style="display:flex;align-items:center;gap:5px">
