@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AudioWorkshop - A music composer</title>
+<title>WaveComposer - A music composer</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -1101,7 +1101,7 @@ const AE = {
     let t=[...this.tracks.values()].find(x=>x.type==='drummer');
     if(t && t.isMuted) return;
     if(t && !t.g) this._wireTrack(t); // wire if ctx now exists but wasn't before
-    // Build a minimal proxy track pointing at master if still no real track
+    // Bld a minimal proxy track pointing at master if still no real track
     const dest = (t && t.g) ? t : {g: this.master};
     const now=time||this.ctx.currentTime;
     const fn={
@@ -3348,7 +3348,7 @@ const STORAGE = {
     modal.style.cssText = `position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:9999;display:flex;align-items:center;justify-content:center;font-family:-apple-system,system-ui,sans-serif`;
     modal.innerHTML = `
       <div style="background:#1c1c1e;border:1px solid #3a3a3c;border-radius:14px;padding:32px 36px;width:480px;max-width:90vw;color:#f0f0f0">
-        <h2 style="margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.3px">💾 Where should UI SHOUT save your projects?</h2>
+        <h2 style="margin:0 0 6px;font-size:20px;font-weight:700;letter-spacing:-.3px">💾 Where should WaveComposer save your projects?</h2>
         <p style="margin:0 0 24px;font-size:12px;color:#8e8e93">Choose a storage backend. You can change this later via the ⋯ menu.</p>
 
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
@@ -3425,7 +3425,7 @@ const STORAGE = {
         // First save — pick location
         this.fileHandle = await window.showSaveFilePicker({
           suggestedName: (document.getElementById('projName')?.value||'untitled')+'.uishout',
-          types:[{description:'UI SHOUT Project',accept:{'application/json':['.uishout','.json']}}]
+          types:[{description:'WaveComposer Project',accept:{'application/json':['.uishout','.json']}}]
         });
         const w = await this.fileHandle.createWritable();
         await w.write(blob); await w.close();
@@ -3439,7 +3439,7 @@ const STORAGE = {
   async loadFromFile() {
     try {
       const [handle] = await window.showOpenFilePicker({
-        types:[{description:'UI SHOUT Project',accept:{'application/json':['.uishout','.json']}}]
+        types:[{description:'WaveComposer Project',accept:{'application/json':['.uishout','.json']}}]
       });
       this.fileHandle = handle;
       const file = await handle.getFile();
@@ -3966,7 +3966,7 @@ window.onload=()=>{
 
     P.automation[bass.id]=[{beat:0,value:.3},{beat:2,value:.8},{beat:8,value:.8},{beat:20,value:.5},{beat:28,value:.8}];
 
-    notify('🎤 UI SHOUT — click anywhere to activate audio');
+    notify('🎤 WaveComposer — click anywhere to activate audio');
 
     // Show storage chooser on first open, unless loading from shared URL
     if(!location.hash.startsWith('#p=')) setTimeout(()=> STORAGE.showModal(), 400);
@@ -3986,7 +3986,7 @@ function mkArp(root,intervals,dur,beats){const notes=[];let t=0;while(t<beats){i
 <div id="settingsOverlay" onclick="toggleSettings()"></div>
 <div id="settingsPanel">
   <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);background:#0d0d10">
-    <span style="font-size:13px;font-weight:800;letter-spacing:-.2px">⚙ UI SHOUT</span>
+    <span style="font-size:13px;font-weight:800;letter-spacing:-.2px">⚙ WaveComposer</span>
     <button onclick="toggleSettings()" style="background:none;border:none;color:var(--dim);cursor:pointer;font-size:18px;line-height:1">✕</button>
   </div>
   <div class="stabs">
@@ -3999,11 +3999,11 @@ function mkArp(root,intervals,dur,beats){const notes=[];let t=0;while(t<beats){i
   <!-- README -->
   <div class="spane on" id="spane-readme">
     <div class="rme">
-      <h1>UI SHOUT</h1>
+      <h1>WaveComposer</h1>
       <div class="tagline">A browser-native DAW. No install. No account. No limits on ideas.</div>
 
       <h2>What is this</h2>
-      <p>UI SHOUT is a full digital audio workstation that lives in a single HTML file. It runs entirely in your browser using the Web Audio API — no server, no plugins, no electron wrapper. Open the file, make music.</p>
+      <p>WaveComposer is a full digital audio workstation that lives in a single HTML file. It runs entirely in your browser using the Web Audio API — no server, no plugins, no electron wrapper. Open the file, make music.</p>
       <p>It was built for people who think in Logic Pro X but want something they can open on any machine, share with a URL, or hack directly.</p>
 
       <h2>Getting started</h2>
@@ -4189,12 +4189,12 @@ function mkArp(root,intervals,dur,beats){const notes=[];let t=0;while(t<beats){i
   <!-- ABOUT -->
   <div class="spane" id="spane-about">
     <div class="rme">
-      <h1>UI SHOUT</h1>
+      <h1>WaveComposer</h1>
       <div class="tagline">Made in a browser. Runs in a browser. Ships as one file.</div>
 
       <div class="secret">
         <h3>✦ The idea</h3>
-        <p>Most DAWs are heavy. They ask you to install, account, activate, configure. UI SHOUT asks nothing — you open a file and it works. It was designed in conversation, built iteratively, and lives entirely in ~3800 lines of HTML.</p>
+        <p>Most DAWs are heavy. They ask you to install, account, activate, configure. WaveComposer asks nothing — you open a file and it works. It was designed in conversation, built iteratively, and lives entirely in ~3800 lines of HTML.</p>
         <p>The name is the sound a UI makes when it finally does what you actually want.</p>
       </div>
 
